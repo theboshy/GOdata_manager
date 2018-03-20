@@ -5,6 +5,7 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
+	"time"
 )
 
 func main() {
@@ -27,9 +28,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Print(res)
+	fmt.Println(res)
 
 	stmtInsert.Close()
+
+	fmt.Print(time.Now().UnixNano() / int64(time.Millisecond))
 
 }
 
