@@ -33,9 +33,11 @@ func main() {
 //ff := engine.Table("radicacion").Select("radicacion.*");
 
 for i:=0;i<len(result);i++{
+	fmt.Print("posicion ",i,"[");
 	for k, v := range result[i] {
-		fmt.Printf("posicion [%s] nombreColumna[%s] valor[%s]\n",i, k, v )
+		fmt.Printf("nombreColumna[%s] valor[%s]\n", k, v )
 	}
+	fmt.Println("]");
 }
 
 
