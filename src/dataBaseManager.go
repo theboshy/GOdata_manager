@@ -15,9 +15,6 @@ func main() {
 	defer db.Close()
 
 	stmtOut, err := db.Prepare("SELECT numero_radicacion FROM radicacion WHERE pdf_idPDF = ?")
-	if err != nil {
-		panic(err.Error())
-	}
 	printSelectResult(stmtOut,err)
 	stmtOut.Close()
 
