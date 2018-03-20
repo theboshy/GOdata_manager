@@ -19,7 +19,7 @@ func main() {
 		panic(err.Error())
 	}
 	printSelectResult(stmtOut,err)
-	defer stmtOut.Close()
+	stmtOut.Close()
 
 	stmtInsert, err := db.Prepare("INSERT INTO roles (nom_rol_usuario,esta_rol_usuario,DEPENDENCIAS_idDEPENDENCIAS) VALUES (?,?,?)")
 	if err != nil {
@@ -32,7 +32,7 @@ func main() {
 
 	fmt.Print(res)
 
-	defer stmtInsert.Close()
+	stmtInsert.Close()
 
 }
 
